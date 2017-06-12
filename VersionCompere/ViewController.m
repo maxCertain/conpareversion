@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *preVersion = @"1.0.9";
-    NSString *nextVersion = @"1.0.10";
+    NSString *preVersion = @"1.0.9.2";
+    NSString *nextVersion = @"1.0.9.1";
     
     NSComparisonResult result = [preVersion compare:nextVersion];
     NSLog(@"result is = %li",(long)result);

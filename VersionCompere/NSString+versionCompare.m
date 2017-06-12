@@ -19,6 +19,9 @@
     NSInteger currentIndex = 0;
     
     for (int index = 0; index < oldComponents.count; index ++) {
+        
+        currentIndex = index;
+        
         NSInteger oldNumber = [[oldComponents objectAtIndex:index] integerValue];
         if (index < newComponents.count) {
             NSInteger newNumber = [[newComponents objectAtIndex:index] integerValue];
@@ -33,11 +36,11 @@
             result = NSOrderedDescending;
             break;
         }
-        currentIndex = index;
+        
     }
     
-    if (currentIndex < newComponents.count) {
-        for (NSInteger index = currentIndex; index < newComponents.count; index ++) {
+    if (currentIndex + 1 < newComponents.count) {
+        for (NSInteger index = currentIndex + 1; index < newComponents.count; index ++) {
             
             NSInteger newNumber = [[newComponents objectAtIndex:index] integerValue];
             
