@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *preVersion = @"1.0";
+    NSString *preVersion = @"1.0.9";
     NSString *nextVersion = @"1.0.10";
     
     NSComparisonResult result = [preVersion compare:nextVersion];
