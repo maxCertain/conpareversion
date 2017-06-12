@@ -16,6 +16,8 @@
     NSArray *newComponents = [newVersion componentsSeparatedByString:@"."];
     
     NSComparisonResult result = NSOrderedSame;
+    NSInteger currentIndex = 0;
+    
     for (int index = 0; index < oldComponents.count; index ++) {
         NSInteger oldNumber = [[oldComponents objectAtIndex:index] integerValue];
         if (index < newComponents.count) {
@@ -30,6 +32,19 @@
         }else if (oldNumber > 0){
             result = NSOrderedDescending;
             break;
+        }
+        currentIndex = index;
+    }
+    
+    if (currentIndex < newComponents.count) {
+        for (NSInteger index = currentIndex; index < newComponents.count; index ++) {
+            
+            NSInteger newNumber = [[newComponents objectAtIndex:index] integerValue];
+            
+            if (newNumber > 0) {
+                result = NSOrderedAscending;
+                break;
+            }
         }
     }
     
